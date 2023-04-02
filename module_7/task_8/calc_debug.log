@@ -1,0 +1,20 @@
+DEBUG | app | 2023-03-31 21:48:52,177 | 29 | Input command: 1 + 2
+DEBUG | app | 2023-03-31 21:48:54,345 | 43 | Processed command: 1.0, 2.0, +.
+DEBUG | app | 2023-03-31 21:48:56,431 | 54 | number_1=1.0, number_2=2.0, operation=+
+DEBUG | app | 2023-03-31 21:48:56,439 | 56 | Result: 3.0
+DEBUG | app | 2023-03-31 21:49:15,670 | 29 | Input command: 1
+DEBUG | app | 2023-03-31 21:49:21,851 | 50 | Reaction on incorrect command.
+DEBUG | app | 2023-03-31 21:53:26,831 | 29 | Input command: 1 + 2
+DEBUG | app | 2023-03-31 21:53:28,896 | 43 | Processed command: 1.0, 2.0, +.
+DEBUG | app | 2023-03-31 21:53:30,975 | 54 | number_1=1.0, number_2=2.0, operation=+
+DEBUG | app | 2023-03-31 21:53:30,985 | 56 | Result: 3.0
+DEBUG | app | 2023-03-31 21:57:52,137 | 29 | Input command: 1 + 2
+DEBUG | app | 2023-03-31 21:57:54,173 | 43 | Processed command: 1.0, 2.0, +.
+DEBUG | app | 2023-03-31 21:57:56,241 | 54 | number_1=1.0, number_2=2.0, operation=+
+DEBUG | app | 2023-03-31 21:57:56,249 | 56 | Result: 3.0
+DEBUG | app | 2023-03-31 21:58:07,703 | 29 | Input command: 1+2
+DEBUG | app | 2023-03-31 21:58:13,858 | 50 | Reaction on incorrect command.
+DEBUG | app | 2023-03-31 22:12:52,091 | 29 | Input command: 1 + 2
+DEBUG | app | 2023-03-31 22:12:54,140 | 43 | Processed command: 1.0, 2.0, +.
+DEBUG | app | 2023-03-31 22:12:56,222 | 54 | number_1=1.0, number_2=2.0, operation=+
+DEBUG | app | 2023-03-31 22:12:56,229 | 56 | Result: 3.0

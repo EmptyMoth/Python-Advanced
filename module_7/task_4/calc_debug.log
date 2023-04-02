@@ -1,0 +1,6 @@
+DEBUG | logger.app | 2023-03-31 19:06:30,525 | 29 | Input command: 1+2
+DEBUG | logger.app | 2023-03-31 19:06:30,593 | 50 | Reaction on incorrect command.
+DEBUG | logger.app | 2023-03-31 19:06:33,443 | 29 | Input command: 1 + 1
+DEBUG | logger.app | 2023-03-31 19:06:33,458 | 43 | Processed command: 1.0, 1.0, +.
+DEBUG | logger.app | 2023-03-31 19:06:33,470 | 54 | number_1=1.0, number_2=1.0, operation=+
+DEBUG | logger.app | 2023-03-31 19:06:33,477 | 56 | Result: 2.0

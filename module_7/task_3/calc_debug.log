@@ -1,0 +1,12 @@
+DEBUG | app | 2023-03-30 23:13:02,246 | 52 | Input command: 1 + 4
+DEBUG | app | 2023-03-30 23:13:02,255 | 66 | Processed command: 1.0, 4.0, +.
+DEBUG | app | 2023-03-30 23:13:02,268 | 77 | number_1=1.0, number_2=4.0, operation=+
+DEBUG | app | 2023-03-30 23:13:02,274 | 79 | Result: 5.0
+DEBUG | app | 2023-03-30 23:13:04,058 | 52 | Input command: 123
+DEBUG | app | 2023-03-30 23:13:04,080 | 73 | Reaction on incorrect command.
+DEBUG | app | 2023-03-30 23:13:07,281 | 52 | Input command: 1 +3
+DEBUG | app | 2023-03-30 23:13:07,309 | 73 | Reaction on incorrect command.
+DEBUG | app | 2023-03-30 23:13:10,803 | 52 | Input command: 1 + 4
+DEBUG | app | 2023-03-30 23:13:10,819 | 66 | Processed command: 1.0, 4.0, +.
+DEBUG | app | 2023-03-30 23:13:10,833 | 77 | number_1=1.0, number_2=4.0, operation=+
+DEBUG | app | 2023-03-30 23:13:10,840 | 79 | Result: 5.0
