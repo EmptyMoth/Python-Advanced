@@ -3,6 +3,10 @@
 {"time": "16:03:01", "level": "INFO", "message": "12"}
 {"time": "16:05:11", "level": "INFO", "message": "Started sort server"}
 {"time": "16:05:11", "level": "WARNING", "message": "\""}
+{"time": "16:05:11", "level": "WARNING", "message": "test_word"}
+{"time": "16:05:11", "level": "WARNING", "message": "\""}
+{"time": "16:05:11", "level": "WARNING", "message": "test_word"}
+{"time": "16:05:11", "level": "WARNING", "message": "test_word"}
 {"time": "16:05:11", "level": "DEBUG", "message": "12"}
 {"time": "05:05:05", "level": "CRITICAL", "message": "12"}
 {"time": "15:05:05", "level": "CRITICAL", "message": "  dog"}
