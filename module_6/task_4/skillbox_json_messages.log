@@ -5,5 +5,5 @@
 {"time": "16:05:11", "level": "WARNING", "message": "\""}
 {"time": "16:05:11", "level": "DEBUG", "message": "12"}
 {"time": "05:05:05", "level": "CRITICAL", "message": "12"}
-{"time": "15:05:05", "level": "CRITICAL", "message": "dog"}
-{"time": "05:05:05", "level": "CRITICAL", "message": "dog"}
+{"time": "15:05:05", "level": "CRITICAL", "message": "  dog"}
+{"time": "05:05:05", "level": "CRITICAL", "message": "dog  "}
