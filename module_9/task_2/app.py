@@ -5,6 +5,7 @@ from flask import Flask, render_template
 #templates_dir: str = os.path.join(root_dir, "templates")
 #static_dir: str = os.path.join(root_dir, "static")
 
+HOST = "0.0.0.0"
 
 app = Flask(__name__)
 
@@ -15,4 +16,4 @@ def hello_world() -> str:
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host=HOST)
