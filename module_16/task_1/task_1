@@ -1,0 +1,5 @@
+1. movie_cast -> actors - многие ко многим
+2. movie_cast -> movie - многие к одному
+3. oscar_awarded -> movie - один ко многим
+4. movie_direction -> movie - многие ко многим
+5. movie_direction -> director - многие ко многим

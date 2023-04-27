@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="hw">
+<dataSource name="task_1_db">
   <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.45">
     <root id="1">
       <ServerVersion>3.40.1</ServerVersion>
@@ -1423,284 +1423,173 @@
     <argument id="503" parent="172">
       <Position>1</Position>
     </argument>
-    <table id="504" parent="173" name="sqlite_master">
+    <table id="504" parent="173" name="actors"/>
+    <table id="505" parent="173" name="director"/>
+    <table id="506" parent="173" name="movie"/>
+    <table id="507" parent="173" name="movie_cast"/>
+    <table id="508" parent="173" name="movie_direction"/>
+    <table id="509" parent="173" name="oscar_awarded"/>
+    <table id="510" parent="173" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="505" parent="173" name="sqlite_sequence">
+    <table id="511" parent="173" name="sqlite_sequence">
       <System>1</System>
     </table>
-    <table id="506" parent="173" name="table_birds"/>
-    <table id="507" parent="173" name="table_effective_manager"/>
-    <table id="508" parent="173" name="table_fees"/>
-    <table id="509" parent="173" name="table_friendship_employees"/>
-    <table id="510" parent="173" name="table_friendship_schedule"/>
-    <table id="511" parent="173" name="table_occult_car_repair"/>
-    <table id="512" parent="173" name="table_truck_with_vaccine"/>
-    <table id="513" parent="173" name="table_users"/>
-    <table id="514" parent="173" name="uefa_commands"/>
-    <table id="515" parent="173" name="uefa_draw"/>
-    <column id="516" parent="504" name="type">
+    <column id="512" parent="504" name="act_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="513" parent="504" name="act_first_name">
+      <DasType>VARCHAR(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="514" parent="504" name="act_last_name">
+      <DasType>VARCHAR(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="515" parent="504" name="act_gender">
+      <DasType>VARCHAR(1)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <key id="516" parent="504">
+      <ColNames>act_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="517" parent="505" name="dir_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="518" parent="505" name="dir_first_name">
+      <DasType>VARCHAR(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="519" parent="505" name="dir_last_name">
+      <DasType>VARCHAR(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <key id="520" parent="505">
+      <ColNames>dir_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="521" parent="506" name="mov_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="522" parent="506" name="mov_title">
+      <DasType>VARCHAR(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <key id="523" parent="506">
+      <ColNames>mov_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="524" parent="507" name="act_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="525" parent="507" name="mov_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="526" parent="507" name="role">
+      <DasType>VARCHAR(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="527" parent="507">
+      <ColNames>act_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>act_id</RefColNames>
+      <RefTableName>actors</RefTableName>
+    </foreign-key>
+    <foreign-key id="528" parent="507">
+      <ColNames>mov_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>mov_id</RefColNames>
+      <RefTableName>movie</RefTableName>
+    </foreign-key>
+    <column id="529" parent="508" name="dir_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="530" parent="508" name="mov_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="531" parent="508">
+      <ColNames>dir_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>dir_id</RefColNames>
+      <RefTableName>director</RefTableName>
+    </foreign-key>
+    <foreign-key id="532" parent="508">
+      <ColNames>mov_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>mov_id</RefColNames>
+      <RefTableName>movie</RefTableName>
+    </foreign-key>
+    <column id="533" parent="509" name="award_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="534" parent="509" name="mov_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="535" parent="509">
+      <ColNames>mov_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>mov_id</RefColNames>
+      <RefTableName>movie</RefTableName>
+    </foreign-key>
+    <key id="536" parent="509">
+      <ColNames>award_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="537" parent="510" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="517" parent="504" name="name">
+    <column id="538" parent="510" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="518" parent="504" name="tbl_name">
+    <column id="539" parent="510" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="519" parent="504" name="rootpage">
+    <column id="540" parent="510" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="520" parent="504" name="sql">
+    <column id="541" parent="510" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="521" parent="505" name="name">
+    <column id="542" parent="511" name="name">
       <Position>1</Position>
     </column>
-    <column id="522" parent="505" name="seq">
+    <column id="543" parent="511" name="seq">
       <Position>2</Position>
     </column>
-    <column id="523" parent="506" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="524" parent="506" name="bird_name">
-      <DasType>TEXT|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="525" parent="506" name="date_time">
-      <DasType>TEXT|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <key id="526" parent="506">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="527" parent="507" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="528" parent="507" name="name">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="529" parent="507" name="salary">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <index id="530" parent="507" name="sqlite_autoindex_table_effective_manager_1">
-      <ColNames>name</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="531" parent="507">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="532" parent="507">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>sqlite_autoindex_table_effective_manager_1</UnderlyingIndexName>
-    </key>
-    <column id="533" parent="508" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="534" parent="508" name="timestamp">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="535" parent="508" name="truck_number">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="536" parent="508" name="fee_amount">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <key id="537" parent="508">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="538" parent="509" name="id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="539" parent="509" name="name">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="540" parent="509" name="preferable_sport">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <key id="541" parent="509">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="542" parent="510" name="employee_id">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="543" parent="510" name="date">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <foreign-key id="544" parent="510">
-      <ColNames>employee_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>table_friendship_employees</RefTableName>
-    </foreign-key>
-    <column id="545" parent="511" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="546" parent="511" name="timestamp">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="547" parent="511" name="car_number">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="548" parent="511" name="car_colour">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="549" parent="511" name="car_type">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <key id="550" parent="511">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="551" parent="512" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="552" parent="512" name="timestamp">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="553" parent="512" name="truck_number">
-      <DasType>VARCHAR(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="554" parent="512" name="temperature_in_celsius">
-      <DasType>NUMERIC|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <key id="555" parent="512">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="556" parent="513" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="557" parent="513" name="username">
-      <DasType>TEXT|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="558" parent="513" name="password">
-      <DasType>TEXT|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="559" parent="513" name="alter_injection">
-      <Position>4</Position>
-    </column>
-    <key id="560" parent="513">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="561" parent="514" name="command_number">
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="562" parent="514" name="command_name">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="563" parent="514" name="command_country">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="564" parent="514" name="command_level">
-      <DasType>VARCHAR(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <key id="565" parent="514">
-      <ColNames>command_number</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="566" parent="515" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="567" parent="515" name="command_number">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="568" parent="515" name="group_number">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="569" parent="515">
-      <ColNames>command_number</ColNames>
-      <RefColNames>command_number</RefColNames>
-      <RefTableName>uefa_commands</RefTableName>
-    </foreign-key>
-    <index id="570" parent="515" name="sqlite_autoindex_uefa_draw_1">
-      <ColNames>command_number</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="571" parent="515">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="572" parent="515">
-      <ColNames>command_number</ColNames>
-      <UnderlyingIndexName>sqlite_autoindex_uefa_draw_1</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>

@@ -2,6 +2,7 @@ import math
 import sqlite3
 import datetime
 
+
 EMPLOYEES_PER_SHIFT_COUNT: int = 10
 WORKING_DAYS_COUNT: int = 366
 EMPLOYEES_COUNT: int = 366
