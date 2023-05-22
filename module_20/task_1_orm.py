@@ -6,9 +6,9 @@ from datetime import datetime, timedelta
 
 
 engine = create_engine("sqlite:///task_1.db")
-Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
+Base = declarative_base()
 
 
 class Books(Base):
@@ -30,6 +30,9 @@ class Authors(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
     surname = Column(Text, nullable=False)
+
+    def __repr__(self):
+        return f"{self.name} {self.surname}"
 
     def to_json(self) -> dict:
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
@@ -64,7 +67,7 @@ class ReceivingBooks(Base):
     id = Column(Integer, primary_key=True)
     book_id = Column(Integer, nullable=False)
     student_id = Column(Integer, nullable=False)
-    date_of_issue = Column(DateTime, nullable=False)
+    date_of_issue = Column(DateTime, nullable=False, default=datetime.now)
     date_of_return = Column(DateTime, nullable=True)
 
     @hybrid_property
