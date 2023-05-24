@@ -1,12 +1,14 @@
 import requests
 import time
+import multiprocessing
 
+from multiprocessing.pool import ThreadPool
 from threading import Thread
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 
-engine = create_engine("sqlite:///task_2.db")
+engine = create_engine("sqlite:///task_1.db")
 Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
@@ -28,26 +30,24 @@ class People(Base):
         return f"name = {self.name}, birth_year = {self.birth_year}, gender = {self.gender}"
 
 
-def explore_people_sequentially() -> None:
+def explore_people_with_threadpool() -> None:
     start_time: time = time.time()
-    for i in range(1, PEOPLE_COUNT + 1):
-        _explore_people(i)
-
+    pool = ThreadPool(processes=PEOPLE_COUNT)
+    pool.map(_explore_people, range(1, PEOPLE_COUNT + 1))
+    pool.close()
+    pool.join()
     end_time: time = time.time() - start_time
-    print("explore_people_sequentially", end_time)
+    print("explore_people_with_threadpool", end_time)
 
 
-def explore_people_in_parallel() -> None:
+def explore_people_with_processpool() -> None:
     start_time: time = time.time()
-    threads: [Thread] = [Thread(target=_explore_people, args=[i + 1]) for i in range(PEOPLE_COUNT)]
-    for thread in threads:
-        thread.start()
-
-    for thread in threads:
-        thread.join()
-
+    pool = multiprocessing.Pool()
+    pool.map(_explore_people, range(1, PEOPLE_COUNT + 1))
+    pool.close()
+    pool.join()
     end_time: time = time.time() - start_time
-    print("explore_people_in_parallel", end_time)
+    print("explore_people_with_processpool", end_time)
 
 
 def _explore_people(people_number: int) -> None:
@@ -66,6 +66,6 @@ def _get_information(url: str) -> dict | None:
 
 if __name__ == '__main__':
     Base.metadata.create_all(bind=engine)
-    explore_people_sequentially()
-    explore_people_in_parallel()
+    explore_people_with_threadpool()
+    explore_people_with_processpool()
     session.commit()
